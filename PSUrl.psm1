@@ -48,6 +48,7 @@ function Set-UrlContent {
 	return wc.UploadData($url, "POST", [System.Text.Encoding]::ASCII.GetBytes($data));
 }
 
+Export-ModuleMember -function Set-UrlCredentials;
 Export-ModuleMember -function Get-UrlContent;
 Export-ModuleMember -function Add-UrlContent;
 Export-ModuleMember -function Set-UrlContent;
