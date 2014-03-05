@@ -32,7 +32,7 @@ function Add-UrlContent {
 	}
 	
 	$webclient.Headers[[System.Net.HttpRequestHeader]::ContentType] = "application/x-www-form-urlencoded";
-	return wc.UploadData($url, "PUT", [System.Text.Encoding]::ASCII.GetBytes($data));
+	return $webclient.UploadData($url, "PUT", [System.Text.Encoding]::ASCII.GetBytes($data));
 }
 
 function Set-UrlContent {
@@ -45,7 +45,7 @@ function Set-UrlContent {
 	}
 	
 	$webclient.Headers[[System.Net.HttpRequestHeader]::ContentType] = "application/x-www-form-urlencoded";
-	return wc.UploadData($url, "POST", [System.Text.Encoding]::ASCII.GetBytes($data));
+	return $webclient.UploadData($url, "POST", [System.Text.Encoding]::ASCII.GetBytes($data));
 }
 
 Export-ModuleMember -function Set-UrlCredentials;
